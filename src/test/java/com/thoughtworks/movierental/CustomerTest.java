@@ -12,5 +12,29 @@ public class CustomerTest {
         Assert.assertEquals(expected, 1 + 2);
     }
 
-    
+    @Test
+    public void shouldGenerateStatementForCustomer() {
+        Customer customer = new Customer("Pankhudi Bhosle");
+
+        Movie batman = new Movie("Batman", Movie.REGULAR);
+        Rental batmanRental = new Rental(batman, 3);
+
+        Movie stuartLittle = new Movie("Stuart Little", Movie.CHILDRENS);
+        Rental stuartLittleRental = new Rental(stuartLittle, 5);
+
+        Movie starWars = new Movie("Star Wars", Movie.NEW_RELEASE);
+        Rental starWarsRental = new Rental(starWars, 1);
+
+        customer.addRental(batmanRental);
+        customer.addRental(stuartLittleRental);
+        customer.addRental(starWarsRental);
+
+        String statement = customer.statement();
+        Assert.assertEquals("Rental Record for Pankhudi Bhosle\n" +
+                "\tBatman\t3.5\n" +
+                "\tStuart Little\t4.5\n" +
+                "\tStar Wars\t3.0\n" +
+                "Amount owed is 11.0\n" +
+                "You earned 3 frequent renter points", statement);
+    }
 }

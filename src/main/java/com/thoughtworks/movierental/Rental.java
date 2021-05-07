@@ -38,4 +38,18 @@ public class Rental {
         }
         return thisAmount;
     }
+
+    int frequentRenterPoints() {
+        int frequentRenterPoints = 0;
+        frequentRenterPoints++;
+        frequentRenterPoints += applicableBonus();
+        return frequentRenterPoints;
+    }
+
+    private int applicableBonus() {
+        if ((getMovie().getPriceCode() == Movie.NEW_RELEASE)
+                &&
+                getDaysRented() > 1) return 1;
+        return 0;
+    }
 }

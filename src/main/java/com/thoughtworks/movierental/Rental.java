@@ -18,9 +18,8 @@ public class Rental {
         return movie;
     }
 
-    double amount() {
+    public double amount() {
         double thisAmount = 0;
-
         switch (movie.getPriceCode()) {
             case Movie.REGULAR:
                 thisAmount += 2;
@@ -39,7 +38,7 @@ public class Rental {
         return thisAmount;
     }
 
-    int frequentRenterPoints() {
+    public int frequentRenterPoints() {
         int frequentRenterPoints = 0;
         frequentRenterPoints++;
         frequentRenterPoints += applicableBonus();
@@ -51,5 +50,9 @@ public class Rental {
                 &&
                 getDaysRented() > 1) return 1;
         return 0;
+    }
+
+    String title() {
+        return movie.getTitle();
     }
 }

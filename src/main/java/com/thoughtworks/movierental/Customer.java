@@ -1,8 +1,5 @@
 package com.thoughtworks.movierental;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Customer {
     private static final String H3_OPEN_TAG = "<h3>";
     private static final String H3_CLOSING_TAG = "</h3>";
@@ -13,7 +10,7 @@ public class Customer {
     private static final String LINE_BREAK_TAG = "<br/>";
 
     private String name;
-    private List<Rental> rentals = new ArrayList<>();
+    private Rentals rentals = new Rentals();
 
     public Customer(String name) {
         this.name = name;

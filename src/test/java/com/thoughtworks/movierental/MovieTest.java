@@ -59,4 +59,17 @@ public class MovieTest {
         int actual = movie.frequentRenterPointsFor(3);
         Assert.assertEquals(1, actual);
     }
+
+    @Test
+    public void shouldReturnCorrectPriceCode() {
+        Movie regular_movie = new Movie("Regular movie", Movie.REGULAR);
+        Assert.assertEquals(0, regular_movie.getPriceCode());
+    }
+
+    @Test
+    public void shouldSetCorrectPriceCode() {
+        Movie movie = new Movie("Childers movie", Movie.NEW_RELEASE);
+        movie.setPriceCode(Movie.CHILDRENS);
+        Assert.assertEquals(2, movie.getPriceCode());
+    }
 }

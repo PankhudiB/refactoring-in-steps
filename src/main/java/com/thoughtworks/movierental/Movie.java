@@ -6,13 +6,11 @@ public class Movie {
     public static final int NEW_RELEASE = 1;
 
     private String title;
-    private int priceCode;
     MovieType movieType;
 
     public Movie(String title, int priceCode) {
         this.title = title;
         this.movieType = movieType(priceCode);
-        this.priceCode = priceCode;
     }
 
     public int getPriceCode() {
@@ -20,7 +18,7 @@ public class Movie {
     }
 
     public void setPriceCode(int arg) {
-        priceCode = arg;
+        movieType = movieType(arg);
     }
 
     public String getTitle() {

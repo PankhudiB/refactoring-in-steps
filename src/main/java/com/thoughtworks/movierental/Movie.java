@@ -26,6 +26,11 @@ public class Movie {
     }
 
     double amountFor(int daysRented) {
+        MovieType movieType = movieType();
+        return movieType.amountFor(daysRented);
+    }
+
+    private MovieType movieType() {
         MovieType movieType;
         switch (getPriceCode()) {
             case REGULAR:
@@ -41,7 +46,7 @@ public class Movie {
                 movieType = new InvalidMovieType();
                 break;
         }
-        return movieType.amountFor(daysRented);
+        return movieType;
     }
 
 

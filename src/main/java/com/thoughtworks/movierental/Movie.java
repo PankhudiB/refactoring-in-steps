@@ -50,19 +50,7 @@ public class Movie {
         return movieType;
     }
 
-
     int frequentRenterPointsFor(int daysRented) {
-        int frequentRenterPoints = 0;
-        frequentRenterPoints++;
-        frequentRenterPoints += applicableBonus(daysRented);
-        return frequentRenterPoints;
+        return movieType.frequentRenterPointsFor(daysRented);
     }
-
-    private int applicableBonus(int daysRented) {
-        if ((this.getPriceCode() == Movie.NEW_RELEASE)
-                &&
-                daysRented > 1) return 1;
-        return 0;
-    }
-
 }

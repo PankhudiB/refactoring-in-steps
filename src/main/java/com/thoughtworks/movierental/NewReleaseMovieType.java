@@ -16,4 +16,10 @@ public class NewReleaseMovieType implements MovieType {
         return priceCode;
     }
 
+    @Override
+    public int frequentRenterPointsFor(int daysRented) {
+        int frequentRenterPoints = 1;
+        if (daysRented > 1) frequentRenterPoints++;
+        return frequentRenterPoints;
+    }
 }

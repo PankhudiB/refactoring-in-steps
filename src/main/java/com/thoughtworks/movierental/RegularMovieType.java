@@ -17,4 +17,9 @@ public class RegularMovieType implements MovieType {
     public int priceCode() {
         return priceCode;
     }
+
+    @Override
+    public int frequentRenterPointsFor(int daysRented) {
+        return 1;
+    }
 }

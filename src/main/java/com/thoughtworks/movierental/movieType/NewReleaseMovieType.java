@@ -1,4 +1,4 @@
-package com.thoughtworks.movierental;
+package com.thoughtworks.movierental.movieType;
 
 public class NewReleaseMovieType implements MovieType {
     int priceCode;

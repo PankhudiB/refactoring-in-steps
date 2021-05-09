@@ -1,5 +1,7 @@
 package com.thoughtworks.movierental;
 
+import com.thoughtworks.movierental.movieType.*;
+
 public class Movie {
     public static final int CHILDRENS = 2;
     public static final int REGULAR = 0;

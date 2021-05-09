@@ -1,17 +1,14 @@
-package com.thoughtworks.movierental;
+package com.thoughtworks.movierental.movieType;
 
-public class ChildrenMovieType implements MovieType {
+public class InvalidMovieType implements MovieType {
     int priceCode;
 
-    public ChildrenMovieType(int priceCode) {
+    public InvalidMovieType(int priceCode) {
         this.priceCode = priceCode;
     }
 
     public double amountFor(int daysRented) {
-        double thisAmount = 1.5;
-        if (daysRented > 3)
-            thisAmount += (daysRented - 3) * 1.5;
-        return thisAmount;
+        return 0;
     }
 
     @Override

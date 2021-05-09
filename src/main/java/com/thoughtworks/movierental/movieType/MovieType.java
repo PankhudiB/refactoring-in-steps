@@ -1,4 +1,4 @@
-package com.thoughtworks.movierental;
+package com.thoughtworks.movierental.movieType;
 
 public interface MovieType {
     public double amountFor(int daysRented);
